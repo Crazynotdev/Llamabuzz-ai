@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  llamabuzz-backend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    restart: unless-stopped
+
+  llamabuzz-frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - llamabuzz-backend
+    restart: unless-stopped
