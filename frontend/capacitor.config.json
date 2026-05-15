@@ -1,0 +1,24 @@
+{
+  "appId": "com.crazytech.llamabuzz",
+  "appName": "LlamaBuzz AI",
+  "webDir": "build",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true,
+    "allowNavigation": ["localhost", "10.0.2.2"]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#04050a",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP"
+    },
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon_config_sample",
+      "iconColor": "#6c8fff",
+      "sound": "beep.wav"
+    }
+  }
+}
